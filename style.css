@@ -1,0 +1,933 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7faf8;
+    color: #26352d;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    height: 75px;
+    padding: 0 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: white;
+
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Logo */
+
+.logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo h2 {
+    color: #198754;
+    font-size: 25px;
+    line-height: 1;
+}
+
+.logo span {
+    color: #777;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+
+/* Menu */
+
+.navbar nav {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar nav a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.navbar nav a:hover {
+    color: #198754;
+}
+
+
+/* Cart */
+
+.cart-button {
+    border: none;
+    background: #198754;
+    color: white;
+
+    padding: 11px 18px;
+
+    border-radius: 25px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.cart-button:hover {
+    background: #146c43;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    min-height: 500px;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(20, 110, 67, 0.95),
+            rgba(25, 135, 84, 0.75),
+            rgba(25, 135, 84, 0.2)
+        ),
+        url("images/banner.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+
+    padding: 70px 8%;
+}
+
+
+.hero-content {
+    max-width: 600px;
+}
+
+
+.hero-content h1 {
+    font-size: 48px;
+    line-height: 1.15;
+
+    margin-bottom: 20px;
+}
+
+
+.hero-content p {
+    font-size: 18px;
+
+    margin-bottom: 30px;
+
+    color: #f0f0f0;
+}
+
+
+.hero-button {
+    display: inline-block;
+
+    background: white;
+    color: #198754;
+
+    text-decoration: none;
+
+    padding: 13px 25px;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.hero-button:hover {
+    background: #e9f7ef;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   PRODUK
+========================================= */
+
+.produk-section {
+    padding: 80px 0;
+
+    background: #ffffff;
+}
+
+
+.produk-section h2 {
+    text-align: center;
+
+    font-size: 34px;
+
+    color: #26352d;
+
+    margin-bottom: 8px;
+}
+
+
+.subjudul {
+    text-align: center;
+
+    color: #777;
+
+    margin-bottom: 45px;
+}
+
+
+/* List produk 2 kolom */
+
+.produk-list {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+}
+
+
+/* Kartu produk */
+
+.produk-item {
+    display: flex;
+    align-items: center;
+
+    gap: 22px;
+
+    background: white;
+
+    padding: 20px;
+
+    border: 1px solid #e7eee9;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+
+    transition: 0.3s;
+}
+
+
+.produk-item:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 10px 25px rgba(25, 135, 84, 0.12);
+
+    border-color: #cde8d8;
+}
+
+
+/* =========================================
+   GAMBAR PRODUK
+========================================= */
+
+.produk-image {
+    width: 155px;
+    min-width: 155px;
+
+    height: 155px;
+
+    background: #f0f8f3;
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+.produk-image img {
+    width: 90%;
+    height: 90%;
+
+    object-fit: contain;
+
+    transition: 0.3s;
+}
+
+
+.produk-item:hover .produk-image img {
+    transform: scale(1.05);
+}
+
+
+/* =========================================
+   INFO PRODUK
+========================================= */
+
+.produk-info {
+    flex: 1;
+}
+
+
+.produk-info h3 {
+    font-size: 20px;
+
+    color: #26352d;
+
+    margin-bottom: 7px;
+}
+
+
+.produk-info p {
+    font-size: 14px;
+
+    color: #777;
+
+    margin-bottom: 10px;
+
+    line-height: 1.5;
+}
+
+
+.produk-info h4 {
+    color: #198754;
+
+    font-size: 19px;
+
+    margin-bottom: 12px;
+}
+
+
+/* Tombol tambah */
+
+.produk-info button {
+    border: none;
+
+    background: #198754;
+
+    color: white;
+
+    padding: 9px 17px;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.produk-info button:hover {
+    background: #146c43;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   TENTANG
+========================================= */
+
+.tentang {
+    padding: 80px 0;
+
+    background: #eef8f2;
+}
+
+
+.tentang .container {
+    max-width: 850px;
+
+    text-align: center;
+}
+
+
+.tentang h2 {
+    font-size: 32px;
+
+    color: #198754;
+
+    margin-bottom: 20px;
+}
+
+
+.tentang p {
+    color: #666;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   KONTAK
+========================================= */
+
+.kontak {
+    padding: 70px 0;
+
+    background: white;
+
+    text-align: center;
+}
+
+
+.kontak h2 {
+    font-size: 32px;
+
+    margin-bottom: 15px;
+}
+
+
+.kontak p {
+    max-width: 650px;
+
+    margin: 0 auto 25px;
+
+    color: #777;
+}
+
+
+.kontak button {
+    border: none;
+
+    background: #198754;
+
+    color: white;
+
+    padding: 12px 25px;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.kontak button:hover {
+    background: #146c43;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    background: #163c2a;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 25px;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   MODAL KERANJANG
+========================================= */
+
+.modal {
+    display: none;
+
+    position: fixed;
+
+    z-index: 2000;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+}
+
+
+.modal-content {
+    width: 100%;
+    max-width: 600px;
+
+    max-height: 85vh;
+
+    overflow-y: auto;
+
+    background: white;
+
+    border-radius: 15px;
+
+    padding: 25px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Header modal */
+
+.modal-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border-bottom: 1px solid #eee;
+
+    padding-bottom: 15px;
+
+    margin-bottom: 15px;
+}
+
+
+.modal-header h2 {
+    color: #198754;
+}
+
+
+.close-button {
+    border: none;
+
+    background: #f1f1f1;
+
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50%;
+
+    font-size: 22px;
+
+    cursor: pointer;
+}
+
+
+.close-button:hover {
+    background: #e5e5e5;
+}
+
+
+/* =========================================
+   ITEM KERANJANG
+========================================= */
+
+.item-keranjang {
+    display: grid;
+
+    grid-template-columns: 1fr auto auto auto;
+
+    gap: 15px;
+
+    align-items: center;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #eee;
+}
+
+
+.item-keranjang p {
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+.item-keranjang > button {
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    font-size: 17px;
+}
+
+
+/* Kontrol jumlah */
+
+.kontrol-jumlah {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.kontrol-jumlah button {
+    width: 28px;
+    height: 28px;
+
+    border: 1px solid #198754;
+
+    background: white;
+
+    color: #198754;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+
+.kontrol-jumlah span {
+    min-width: 20px;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   TOTAL
+========================================= */
+
+.total {
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 18px;
+
+    padding: 20px 0;
+}
+
+
+/* Checkout */
+
+.checkout-button {
+    width: 100%;
+
+    border: none;
+
+    background: #198754;
+
+    color: white;
+
+    padding: 13px;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.checkout-button:hover {
+    background: #146c43;
+}
+
+
+/* =========================================
+   RESPONSIVE TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 0 3%;
+    }
+
+    .navbar nav {
+        gap: 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .produk-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================
+   RESPONSIVE HP
+========================================= */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        height: auto;
+
+        padding: 15px;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+
+    .navbar nav {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 20px;
+
+        font-size: 14px;
+    }
+
+
+    .cart-button {
+        padding: 9px 13px;
+    }
+
+
+    .hero {
+        min-height: 450px;
+
+        padding: 50px 7%;
+    }
+
+
+    .hero-content h1 {
+        font-size: 34px;
+    }
+
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+
+    .produk-section {
+        padding: 55px 0;
+    }
+
+
+    .produk-section h2 {
+        font-size: 28px;
+    }
+
+
+    .produk-item {
+        gap: 15px;
+
+        padding: 15px;
+    }
+
+
+    .produk-image {
+        width: 115px;
+        min-width: 115px;
+
+        height: 115px;
+    }
+
+
+    .produk-info h3 {
+        font-size: 17px;
+    }
+
+
+    .produk-info p {
+        font-size: 13px;
+    }
+
+
+    .produk-info h4 {
+        font-size: 17px;
+    }
+
+
+    .produk-info button {
+        padding: 8px 12px;
+    }
+
+
+    .item-keranjang {
+        grid-template-columns: 1fr auto;
+
+        gap: 8px;
+    }
+}
+
+
+/* =========================================
+   HP KECIL
+========================================= */
+
+@media (max-width: 450px) {
+    
+
+    .produk-item {
+        align-items: flex-start;
+    }
+
+
+    .produk-image {
+        width: 95px;
+        min-width: 95px;
+
+        height: 95px;
+    }
+
+
+    .produk-info h3 {
+        font-size: 15px;
+    }
+
+
+    .produk-info p {
+        font-size: 12px;
+    }
+
+
+    .produk-info h4 {
+        font-size: 15px;
+    }
+}
+/* ================= KATEGORI ================= */
+
+.kategori-section {
+    padding: 70px 0;
+    background: #f6faf7;
+}
+
+.kategori-section .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 30px;
+}
+
+.kategori-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.kategori-heading p {
+    color: #198754;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.kategori-heading h2 {
+    font-size: 32px;
+    color: #20382d;
+    margin: 0 0 10px;
+}
+
+.kategori-heading span {
+    color: #777;
+}
+
+/* BIKIN KARTU SEJAJAR */
+.kategori-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* KARTU KATEGORI */
+.kategori-card {
+    width: 100%;
+    min-height: 190px;
+    padding: 25px 18px;
+    border: none;
+    border-radius: 16px;
+    background: white;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    cursor: pointer;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.kategori-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.kategori-icon {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.kategori-card h3 {
+    margin: 5px 0 8px;
+    font-size: 20px;
+    color: #20382d;
+}
+
+.kategori-card p {
+    margin: 0 0 15px;
+    color: #777;
+    font-size: 14px;
+}
+
+.kategori-card span {
+    color: #198754;
+    font-weight: 600;
+}
+
+
+/* HP */
+@media (max-width: 768px) {
+    .kategori-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .kategori-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Toko Kelontong</title>
+
+    <!-- Hubungkan dengan CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="logo">
+            <h2>Kelontong Mart</h2>
+            <span>Toko Kelontong</span>
+        </div>
+
+        <nav>
+            <a href="#beranda">Beranda</a>
+            <a href="#produk">Produk</a>
+            <a href="#tentang">Tentang</a>
+            <a href="#kontak">Kontak</a>
+        </nav>
+
+        <button class="cart-button" onclick="bukaKeranjang()">
+            🛒 Keranjang
+            (<span id="jumlahKeranjang">0</span>)
+        </button>
+    </header>
+
+
+    <!-- ================= BERANDA ================= -->
+    <section class="hero" id="beranda">
+
+        <div class="hero-content">
+            <h1>Belanja Kebutuhan<br>Sehari-hari dengan Mudah</h1>
+
+            <p>
+                Temukan berbagai kebutuhan rumah tangga
+                dengan harga terjangkau di toko kami.
+            </p>
+
+            <a href="#produk" class="hero-button">
+                Belanja Sekarang
+            </a>
+        </div>
+
+    </section>
+
+    
+<!-- KATEGORI PRODUK -->
+<section class="kategori-section" id="kategori">
+    <div class="container">
+
+        <div class="kategori-heading">
+            <p>KATEGORI PILIHAN</p>
+            <h2>Belanja Berdasarkan Kategori</h2>
+            <span>Pilih kategori untuk menemukan produk yang kamu butuhkan.</span>
+        </div>
+
+        <div class="kategori-grid">
+
+            <button class="kategori-card"
+                onclick="pilihKategori('sembako')">
+                <div class="kategori-icon">🌾</div>
+                <h3>Sembako</h3>
+                <p>Beras, minyak, gula, telur</p>
+                <span>Lihat Produk →</span>
+            </button>
+
+            <button class="kategori-card"
+                onclick="pilihKategori('minuman')">
+                <div class="kategori-icon">🥤</div>
+                <h3>Minuman</h3>
+                <p>Susu, teh, kopi, air mineral</p>
+                <span>Lihat Produk →</span>
+            </button>
+
+            <button class="kategori-card"
+                onclick="pilihKategori('snack')">
+                <div class="kategori-icon">🍪</div>
+                <h3>Snack</h3>
+                <p>Keripik, biskuit, wafer</p>
+                <span>Lihat Produk →</span>
+            </button>
+
+            <button class="kategori-card"
+                onclick="pilihKategori('alat-mandi')">
+                <div class="kategori-icon">🧴</div>
+                <h3>Alat Mandi</h3>
+                <p>Sabun, sampo, pasta gigi</p>
+                <span>Lihat Produk →</span>
+            </button>
+
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- ================= PRODUK ================= -->
+    <section class="produk-section" id="produk">
+
+        <div class="container">
+
+            <h2>Daftar Produk</h2>
+
+            <p class="subjudul">
+                Berbagai kebutuhan sehari-hari tersedia di toko kami
+            </p>
+
+
+            <div class="produk-list">
+
+
+                <!-- PRODUK 1 -->
+                <div class="produk-item" data-kategori = "sembako">
+
+                    <div class="produk-image">
+                        <img src="images/berasprem.jpg" alt="Beras Premium">
+                    </div>
+
+                    <div class="produk-info">
+
+                        <h3>Beras Premium</h3>
+
+                        <p>
+                            Beras pulen berkualitas
+                            kemasan 5 kg.
+                        </p>
+
+                        <h4>Rp75.000</h4>
+
+                        <button onclick="tambahKeKeranjang('Beras Premium', 75000)">
+                            + Tambah
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUK 2 -->
+                <div class="produk-item"data-kategori = "sembako">
+
+                    <div class="produk-image">
+                        <img src="images/minyak.jpg" alt="Minyak Goreng">
+                    </div>
+
+                    <div class="produk-info">
+
+                        <h3>Minyak Goreng</h3>
+
+                        <p>
+                            Minyak goreng kemasan
+                            1 liter.
+                        </p>
+
+                        <h4>Rp18.000</h4>
+
+                        <button onclick="tambahKeKeranjang('Minyak Goreng', 18000)">
+                            + Tambah
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUK 3 -->
+                <div class="produk-item"data-kategori = "sembako">
+
+                    <div class="produk-image" >
+                        <img src="images/gula.jpg" alt="Gula Pasir">
+                    </div>
+
+                    <div class="produk-info">
+
+                        <h3>Gula Pasir</h3>
+
+                        <p>
+                            Gula pasir putih
+                            kemasan 1 kg.
+                        </p>
+
+                        <h4>Rp17.000</h4>
+
+                        <button onclick="tambahKeKeranjang('Gula Pasir', 17000)">
+                            + Tambah
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUK 4 -->
+                <div class="produk-item"data-kategori = "sembako">
+
+                    <div class="produk-image">
+                        <img src="images/mi.jpg" alt="Mi Instan">
+                    </div>
+
+                    <div class="produk-info">
+
+                        <h3>Mi Instan</h3>
+
+                        <p>
+                            Mi instan dengan
+                            berbagai pilihan rasa.
+                        </p>
+
+                        <h4>Rp3.500</h4>
+
+                        <button onclick="tambahKeKeranjang('Mi Instan', 3500)">
+                            + Tambah
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUK 5 -->
+                <div class="produk-item"data-kategori = "minuman">
+
+                    <div class="produk-image">
+                        <img src="images/susuht.jpg" alt="Susu UHT">
+                    </div>
+
+                    <div class="produk-info">
+
+                        <h3>Susu UHT</h3>
+
+                        <p>
+                            Susu UHT 200 ml
+                            untuk kebutuhan sehari-hari.
+                        </p>
+
+                        <h4>Rp7.000</h4>
+
+                        <button onclick="tambahKeKeranjang('Susu UHT', 7000)">
+                            + Tambah
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- PRODUK 6 -->
+                <div class="produk-item"data-kategori = "minuman">
+
+                    <div class="produk-image">
+                        <img src="images/aqua.jpg" alt="Air Kemasan">
+                    </div>
+
+                    <div class="produk-info">
+
+                        <h3>Air Mineral</h3>
+
+                        <p>
+                            Air Mineral dengan berbagai merk.
+                        </p>
+
+                        <h4>Rp3.500</h4>
+
+                        <button onclick="tambahKeKeranjang('Air Mineral', 3500)">
+                            + Tambah
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUK 7 -->
+                <div class="produk-item"data-kategori = "alat-mandi">
+
+                    <div class="produk-image" >
+                        <img src="images/pastagigi.jpg" alt="Pepsodent">
+                    </div>
+
+                    <div class="produk-info">
+
+                        <h3>Pepsodent</h3>
+
+                        <p>
+                            Pasta Gigi Pepsodent
+                        </p>
+
+                        <h4>Rp4.000</h4>
+
+                        <button onclick="tambahKeKeranjang('Pepsodent', 4000)">
+                            + Tambah
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUK 8 -->
+                <div class="produk-item"data-kategori = "alat-mandi">
+
+                    <div class="produk-image" >
+                        <img src="images/sabunmandi.jpg" alt="Lifeboy">
+                    </div>
+
+                    <div class="produk-info">
+
+                        <h3>Sabun Mandi Lifeboy</h3>
+
+                        <p>
+                            Sabun mandi untuk
+                            kebutuhan sehari-hari.
+                        </p>
+
+                        <h4>Rp6.000</h4>
+
+                        <button onclick="tambahKeKeranjang('Lifeboy', 6000)">
+                            + Tambah
+                        </button>
+
+                    </div>
+
+                </div>
+
+                    <!-- PRODUK 9 -->
+                <div class="produk-item"data-kategori = "snack">
+
+                    <div class="produk-image" >
+                        <img src="images/aoka.jpg" alt="Roti Aoka">
+                    </div>
+
+                    <div class="produk-info">
+
+                        <h3>Roti Aoka</h3>
+
+                        <p>
+                           Roti Aoka dengan berbagai pilihan rasa.
+                        </p>
+
+                        <h4>Rp2.000</h4>
+
+                        <button onclick="tambahKeKeranjang('Roti Aoka', 2000)">
+                            + Tambah
+                        </button>
+
+                    </div>
+
+                </div>
+
+                    <!-- PRODUK 10 -->
+                <div class="produk-item"data-kategori = "snack">
+
+                    <div class="produk-image" >
+                        <img src="images/sarigandum.jpg" alt="Sari Gandum">
+                    </div>
+
+                    <div class="produk-info">
+
+                        <h3>Sari Gandum</h3>
+
+                        <p>
+                            Sari Gandum Coklat dan Kacang.
+                        </p>
+
+                        <h4>Rp11.000</h4>
+
+                        <button onclick="tambahKeKeranjang('Sari Gandum', 11000)">
+                            + Tambah
+                        </button>
+
+                    </div>
+
+                </div>
+
+                    <!-- PRODUK 11 -->
+                <div class="produk-item"data-kategori = "snack">
+
+                    <div class="produk-image" >
+                        <img src="images/broncip.jpg" alt="Keripik Bronchips">
+                    </div>
+
+                    <div class="produk-info">
+
+                        <h3>Keripik Bronchips</h3>
+
+                        <p>
+                           Keripik Bronchips rasa coklat, kacang, dan keju.
+                        </p>
+
+                        <h4>Rp10.000</h4>
+
+                        <button onclick="tambahKeKeranjang('Keripik Bronchips', 10000)">
+                            + Tambah
+                        </button>
+
+                    </div>
+
+                </div>
+
+                    <!-- PRODUK 12 -->
+                <div class="produk-item"data-kategori = "snack">
+
+                    <div class="produk-image" >
+                        <img src="images/kentangmus.jpg" alt="Kentang Mustofa">
+                    </div>
+
+                    <div class="produk-info">
+
+                        <h3>Kentang Mustofa</h3>
+
+                        <p>
+                            Kentang enak dan kriuk.
+                        </p>
+
+                        <h4>Rp15.000</h4>
+
+                        <button onclick="tambahKeKeranjang('Kentang Mustofa', 15000)">
+                            + Tambah
+                        </button>
+
+                    </div>
+
+                </div>
+
+                    <!-- PRODUK 13 -->
+                <div class="produk-item"data-kategori = "snack">
+
+                    <div class="produk-image" >
+                        <img src="images/pillowss.jpg" alt="Pillows">
+                    </div>
+
+                    <div class="produk-info">
+
+                        <h3>Pillows</h3>
+
+                        <p>
+                            Pillows rasa-rasa.
+                        </p>
+
+                        <h4>Rp8.000</h4>
+
+                        <button onclick="tambahKeKeranjang('Pillows', 8000)">
+                            + Tambah
+                        </button>
+
+                    </div>
+
+                </div>
+
+                    <!-- PRODUK 14 -->
+                <div class="produk-item"data-kategori = "alat-mandi">
+
+                    <div class="produk-image" >
+                        <img src="images/glowlovely.jpg" alt="Glow & Lovely">
+                    </div>
+
+                    <div class="produk-info">
+
+                        <h3>Glow & Lovely</h3>
+
+                        <p>
+                            Face Wash Glow & Lovely.
+                        </p>
+
+                        <h4>Rp15.000</h4>
+
+                        <button onclick="tambahKeKeranjang('Glow & Lovely', 15000)">
+                            + Tambah
+                        </button>
+
+                    </div>
+
+                </div>
+
+                    <!-- PRODUK 15 -->
+                <div class="produk-item"data-kategori = "alat-mandi">
+
+                    <div class="produk-image" >
+                        <img src="images/shinzui.jpg" alt="Shinzui Body Wash">
+                    </div>
+
+                    <div class="produk-info">
+
+                        <h3>Shinzui Body Wash</h3>
+
+                        <p>
+                            Shinzui Body Wash.
+                        </p>
+
+                        <h4>Rp10.000</h4>
+
+                        <button onclick="tambahKeKeranjang('Shinzui Body Wash', 10000)">
+                            + Tambah
+                        </button>
+
+                    </div>
+
+                </div>
+
+                    <!-- PRODUK 16 -->
+                <div class="produk-item"data-kategori = "alat-mandi">
+
+                    <div class="produk-image" >
+                        <img src="images/hshiroy.png" alt="Hadalabo Shiroyjun">
+                    </div>
+
+                    <div class="produk-info">
+
+                        <h3>Hadalabo Shiroyjun FW </h3>
+
+                        <p>
+                            100gr
+                            Untuk kulit normal dan berminyak.
+                        </p>
+
+                        <h4>Rp32.000</h4>
+
+                        <button onclick="tambahKeKeranjang('Hadalabo Shiroyjun FW', 32000)">
+                            + Tambah
+                        </button>
+
+                    </div>
+
+                </div>
+
+                    <!-- PRODUK 17 -->
+                <div class="produk-item"data-kategori = "alat-mandi">
+
+                    <div class="produk-image" >
+                        <img src="images/hgokyu.jpg" alt="Hadalabo Gokyujun">
+                    </div>
+
+                    <div class="produk-info">
+
+                        <h3>Hadalabo Gokyujun FW</h3>
+
+                        <p>
+                           100gr.
+                           Untuk kulit kombinasi dan berminyak.
+                        </p>
+
+                        <h4>Rp32.000</h4>
+
+                        <button onclick="tambahKeKeranjang('Hadalabo Gokyujun FW', 32000)">
+                            + Tambah
+                        </button>
+
+                    </div>
+
+                </div>
+
+                    <!-- PRODUK 18 -->
+                <div class="produk-item"data-kategori = "minuman">
+
+                    <div class="produk-image" >
+                        <img src="images/sprite.jpg" alt="Sprite Nipis Madu">
+                    </div>
+
+                    <div class="produk-info">
+
+                        <h3>Sprite Nipis Madu</h3>
+
+                        <p>
+                            Sprite Nipis Madu.
+                        </p>
+
+                        <h4>Rp8.000</h4>
+
+                        <button onclick="tambahKeKeranjang('Sprite Nipis Madu', 8000)">
+                            + Tambah
+                        </button>
+
+                    </div>
+
+                </div>
+
+                    <!-- PRODUK 19 -->
+                <div class="produk-item"data-kategori = "minuman">
+
+                    <div class="produk-image" >
+                        <img src="images/cocacola.jpg" alt="Coca Cola">
+                    </div>
+
+                    <div class="produk-info">
+
+                        <h3>Coca Cola</h3>
+
+                        <p>
+                            Coca Cola
+                        </p>
+
+                        <h4>Rp10.000</h4>
+
+                        <button onclick="tambahKeKeranjang('Coca Cola', 10000)">
+                            + Tambah
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= TENTANG ================= -->
+    <section class="tentang" id="tentang">
+
+        <div class="container">
+
+            <h2>Tentang Toko Kami</h2>
+
+            <p>
+                Toko kami menyediakan berbagai kebutuhan
+                sehari-hari dengan harga yang terjangkau.
+                Kami berusaha memberikan kemudahan bagi
+                pelanggan untuk mendapatkan kebutuhan rumah
+                tangga dengan mudah dan praktis.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= KONTAK ================= -->
+    <section class="kontak" id="kontak">
+
+        <div class="container">
+
+            <h2>Kontak</h2>
+
+            <p>
+                Jika ingin melakukan pemesanan atau
+                menanyakan ketersediaan produk, silakan
+                hubungi kami melalui WhatsApp.
+            </p>
+
+            <button onclick="checkoutWhatsApp()">
+                Hubungi WhatsApp
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+
+        <p>
+            © 2026 Kelontong Mart - Toko Kelontong
+        </p>
+
+    </footer>
+
+
+    <!-- ================= MODAL KERANJANG ================= -->
+    <div class="modal" id="modalKeranjang">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h2>Keranjang Belanja</h2>
+
+                <button onclick="tutupKeranjang()" class="close-button">
+                    ×
+                </button>
+
+            </div>
+
+
+            <!-- Isi keranjang akan muncul di sini -->
+            <div id="daftarKeranjang">
+
+            </div>
+
+
+            <div class="total">
+
+                <strong>Total:</strong>
+
+                <strong id="totalHarga">
+                    Rp0
+                </strong>
+
+            </div>
+
+
+            <button
+                class="checkout-button"
+                onclick="checkoutWhatsApp()">
+
+                Checkout via WhatsApp
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- MODAL KERANJANG -->
+<div class="modal" id="modalKeranjang">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+            <h2>Keranjang Belanja</h2>
+
+            <button onclick="tutupKeranjang()" class="close-button">
+                ×
+            </button>
+        </div>
+
+        <div id="daftarKeranjang">
+
+     <!-- Produk muncul di sini -->
+        </div>
+
+        <div class="total">
+            <strong>Total:</strong>
+            <strong id="totalHarga">Rp0</strong>
+        </div>
+
+        <button
+            class="checkout-button"
+            onclick="checkoutWhatsApp()">
+            Checkout via WhatsApp
+        </button>
+
+    </div>
+
+</div>
+
+
+    <!-- Hubungkan dengan JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
